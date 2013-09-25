@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+# Install Vundler to manage Vim bundles
+if [[ ! -d ~/.vim/bundle/vundle ]]; then
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
+# Symlink my vimrc
+ln -s ./.vimrc ~/.vimrc
+
+# Install bundles managed by Vundler
+vim +BundleInstall +qall
+
+# Install oh-my-zsh
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+# Symlink my zshrc
+ln -s ./.zshrc ~/.zshrc
+
