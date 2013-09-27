@@ -19,6 +19,7 @@ export AWS_AUTO_SCALING_HOME=/Users/aleclair/as-api-tools
 export AWS_ELB_HOME=/Users/aleclair/elb-api-tools
 export JAVA_HOME=/usr
 export GOPATH=$SRC/go
+export EDITOR=vim
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_ELB_HOME/bin:$PATH
 export PATH=/usr/local/Cellar/rabbitmq/3.0.0/sbin:$HOME/.rvm/bin:$GOPATH/bin:$PATH
