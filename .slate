@@ -1,0 +1,32 @@
+# Slate Config
+# Some things borrowed from Tanner Burson
+
+# Follow cursor between monitors, use that to indicate where to run commands
+config defaultToCurrentScreen true
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows true
+config windowHintsSpread
+alias hyper cmd
+ 
+bind e:${hyper} hint ASDFJKLQWERTYUIOP
+ 
+bind g:${hyper} grid padding:5 0:2,2 1:8,3
+ 
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY
+alias bottom-minus-adium move screenOriginX+150;screenSizeY/2 screenSizeX-150;screenSizeY/2
+ 
+bind pad1:${hyper} ${bottomleft}
+bind pad2:${hyper} push bottom bar-resize:screenSizeY/2
+bind pad3:${hyper} ${bottomright}
+bind pad4:${hyper} ${lefthalf}
+bind pad5:${hyper} ${full}
+bind pad6:${hyper} ${righthalf}
+bind pad7:${hyper} ${topleft}
+bind pad8:${hyper} push top bar-resize:screenSizeY/2
+bind pad9:${hyper} ${topright}
