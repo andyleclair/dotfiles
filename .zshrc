@@ -32,6 +32,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X1
 export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_ELB_HOME/bin:$PATH
 export PATH=/usr/local/Cellar/rabbitmq/3.0.0/sbin:$HOME/.rvm/bin:$GOPATH/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=$SRC/dotfiles/scripts:$PATH
 
 # aliases
 alias resource="source ~/.zshrc"
@@ -44,10 +46,9 @@ alias gpl="git pull origin"
 alias be="bundle exec"
 alias love="/Applications/love.app/Contents/MacOS/love"
 alias knife="nocorrect knife"
-alias override_chef="export CHEF_URL_OVERRIDE=\"http://ec2-23-20-7-225.compute-1.amazonaws.com:4000\""
-alias unoverride_chef="unset CHEF_URL_OVERRIDE"
 alias la="ls -la"
 alias csshx="nocorrect csshx"
+alias frbe="foreman run bundle exec"
 
 # functions
 
@@ -87,21 +88,6 @@ tcssh () {
   done
   tmux set-window-option synchronize-panes on
   tmux -2 attach-session -t tcssh
-}
-
-gd () {
-  if [ ! -h $SRC/chef/cookbooks/$1 ]
-  then
-    `ln -s $SRC/$1-cookbook $SRC/chef/cookbooks/$1`
-  else
-    echo "$1 is already symlinked to chef, ignoring"
-  fi
-  if grep -Fxq "$1" $SRC/chef/.gitignore
-  then 
-    echo "$1 is already in .gitignore, ignoring."
-  else
-    echo "cookbooks/$1" >> $SRC/chef/.gitignore
-  fi
 }
 
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt

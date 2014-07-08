@@ -23,6 +23,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tsaleh/vim-align'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
@@ -30,6 +31,7 @@ Bundle 'skwp/vim-rspec'
 Bundle 'pangloss/vim-javascript'
 Bundle 'briancollins/vim-jst'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'sunaku/vim-ruby-minitest'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -119,3 +121,10 @@ set directory=./.vim-swap//
 set directory+=~/.vim/swap//
 set directory+=~/tmp//
 set directory+=.
+
+""""""""""""""""""""""""""""""""""""""
+" Miscellaneous Config
+""""""""""""""""""""""""""""""""""""""
+
+" NerdTree should show hidden files
+let NERDTreeShowHidden=1

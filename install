@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+# Install OSX packages
+if [[ `uname` == 'Darwin' ]]; then
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+
+# install RVM because ruby <3
+curl -sSL https://get.rvm.io | bash -s stable
+
 # Install Vundler to manage Vim bundles
 if [[ ! -d ~/.vim/bundle/vundle ]]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

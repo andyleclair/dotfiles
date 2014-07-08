@@ -30,3 +30,5 @@ bind pad6:${hyper} ${righthalf}
 bind pad7:${hyper} ${topleft}
 bind pad8:${hyper} push top bar-resize:screenSizeY/2
 bind pad9:${hyper} ${topright}
+
+bind r:alt,ctrl,cmd relaunch
