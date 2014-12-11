@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="eastwood"
 SRC=$HOME/src
 
-plugins=(git rvm brew gem github heroku node npm osx rails)
+plugins=(git rvm brew gem github heroku node npm osx rails lein)
 
 source $ZSH/oh-my-zsh.sh
 
