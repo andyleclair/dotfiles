@@ -14,13 +14,13 @@ if [[ ! -d ~/.vim/bundle/vundle ]]; then
 fi
 
 # Symlink my vimrc
-ln -s ./.vimrc ~/.vimrc
+ln -s ./.vimrc $HOME/.vimrc
 
 # Install bundles managed by Vundler
 vim +BundleInstall +qall
 
 # Install oh-my-zsh
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+curl -L http://install.ohmyz.sh | sh
 
 # Install AAM to manage AWS accounts
 curl -L https://raw.github.com/jlogsdon/aam/master/aam.sh > ~/.aam.sh

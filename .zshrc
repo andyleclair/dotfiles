@@ -3,9 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="eastwood"
 SRC=$HOME/src
 
-DISABLE_AUTO_UPDATE="true"
-
-plugins=(git rvm brew gem github heroku node npm osx rails3)
+plugins=(git rvm brew gem github heroku node npm osx rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,20 +18,26 @@ export AWS_CREDENTIAL_FILE=$HOME/aws_credentials
 export EC2_HOME=$HOME/ec2-api-tools
 export AWS_AUTO_SCALING_HOME=$HOME/as-api-tools
 export AWS_ELB_HOME=$HOME/elb-api-tools
-export JAVA_HOME=/usr
+export JAVA_HOME=$(/usr/libexec/java_home)
 export GOPATH=$SRC/go
 export EDITOR=vim
 export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
-export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_ELB_HOME/bin:$PATH
-export PATH=/usr/local/Cellar/rabbitmq/3.0.0/sbin:$HOME/.rvm/bin:$GOPATH/bin:$PATH
+export PATH=$EC2_HOME/bin:$PATH
+export PATH=$AWS_AUTO_SCALING_HOME/bin:$PATH
+export PATH=$AWS_ELB_HOME/bin:$PATH
+export PATH=/usr/local/Cellar/rabbitmq/3.0.0/sbin:$PATH
+export PATH=$GOPATH/bin:$PATH
+export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$SRC/dotfiles/scripts:$PATH
+export PATH=$HOME/.rvm/bin:$PATH
 
 # aliases
 alias resource="source ~/.zshrc"
@@ -91,6 +95,3 @@ tcssh () {
 }
 
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
-
-# init shelly things
-rvm default

@@ -32,6 +32,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'briancollins/vim-jst'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'sunaku/vim-ruby-minitest'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'mtth/scratch.vim'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -128,3 +130,6 @@ set directory+=.
 
 " NerdTree should show hidden files
 let NERDTreeShowHidden=1
+
+" Set .hamlc to be read as .haml
+au BufRead,BufNewFile *.hamlc set ft=haml
