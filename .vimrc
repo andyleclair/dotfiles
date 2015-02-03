@@ -35,6 +35,9 @@ Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mtth/scratch.vim'
 Bundle 'wlangstroth/vim-racket'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
+Bundle 'kien/rainbow_parentheses.vim'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -103,6 +106,9 @@ map <leader>n :NERDTreeToggle<cr>
 " Split/vsplit
 map <leader>s :split<cr>
 map <leader>v :vsplit<cr>
+
+" Scratch buffer
+map <leader>r :Scratch<cr>
 
 " Turn off the arrow keys you fucking Neanderthal. THIS IS VIM!
 map <Left> <Nop>
