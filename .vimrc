@@ -34,6 +34,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mtth/scratch.vim'
+Bundle 'wlangstroth/vim-racket'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
