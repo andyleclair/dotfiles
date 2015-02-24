@@ -17,7 +17,7 @@ fi
 ln -s ./.vimrc $HOME/.vimrc
 
 # Install bundles managed by Vundler
-vim +BundleInstall +qall
+vim +PluginInstall +qall
 
 # Install oh-my-zsh
 curl -L http://install.ohmyz.sh | sh

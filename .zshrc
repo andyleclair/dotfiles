@@ -52,6 +52,7 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 alias la="ls -la"
 alias csshx="nocorrect csshx"
 alias frbe="foreman run bundle exec"
+alias irb="pry" #seriously
 
 # functions
 

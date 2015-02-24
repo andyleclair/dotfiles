@@ -17,34 +17,36 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" Bundle these plugins
-Bundle 'tsaleh/vim-align'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rails'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'skwp/vim-rspec'
-Bundle 'pangloss/vim-javascript'
-Bundle 'briancollins/vim-jst'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'sunaku/vim-ruby-minitest'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'mtth/scratch.vim'
-Bundle 'wlangstroth/vim-racket'
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
-Bundle 'kien/rainbow_parentheses.vim'
+" Plugin these plugins
+Plugin 'tsaleh/vim-align'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'skwp/vim-rspec'
+Plugin 'pangloss/vim-javascript'
+Plugin 'briancollins/vim-jst'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'sunaku/vim-ruby-minitest'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'mtth/scratch.vim'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'bling/vim-airline'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
 """"""""""""""""""""""""""""""""""""""
 
 " Install Solarized (the last color scheme you'll ever need)
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
+call vundle#end()
 
 filetype plugin indent on
 
@@ -56,7 +58,6 @@ colorscheme solarized
 if has("gui_running")
   set guioptions-=T
 endif
-
 
 "
 " Tabs n' shit
@@ -75,6 +76,9 @@ set number
 " Incremental search, highlight searches
 set incsearch
 set hlsearch
+
+" Make sure airline always shows up
+set laststatus=2
 
 set shell=zsh
 
