@@ -14,7 +14,7 @@ filetype off
 
 " Setup Vundle
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Let Vundle manage Vundle
 Plugin 'gmarik/vundle'
@@ -27,7 +27,6 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'skwp/vim-rspec'
 Plugin 'pangloss/vim-javascript'
 Plugin 'briancollins/vim-jst'
 Plugin 'Valloric/YouCompleteMe'
@@ -39,6 +38,8 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/syntastic'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
