@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# First, setup personal and src directories
+mkdir -p $HOME/personal
+mkdir -p $HOME/src
+
 # Install OSX packages
 if [[ `uname` == 'Darwin' ]]; then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -14,7 +18,7 @@ if [[ ! -d ~/.vim/bundle/vundle ]]; then
 fi
 
 # Symlink my vimrc
-ln -s ./.vimrc $HOME/.vimrc
+ln -s $HOME/personal/dotfiles/.vimrc $HOME/.vimrc
 
 # Install bundles managed by Vundler
 vim +PluginInstall +qall
@@ -26,5 +30,5 @@ curl -L http://install.ohmyz.sh | sh
 curl -L https://raw.github.com/jlogsdon/aam/master/aam.sh > ~/.aam.sh
 
 # Symlink my zshrc
-ln -s ./.zshrc ~/.zshrc
+ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc
 
