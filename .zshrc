@@ -2,13 +2,14 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="eastwood"
 SRC=$HOME/src
+PERSONAL=$HOME/personal
 
 plugins=(git rvm brew gem github heroku node npm osx rails lein)
 
 source $ZSH/oh-my-zsh.sh
 
 # source credentials and don't store them in git
-source $SRC/dotfiles/.credentials
+source $PERSONAL/dotfiles/.credentials
 
 # source aam
 source ~/.aam.sh
