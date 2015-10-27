@@ -21,6 +21,8 @@ export AWS_AUTO_SCALING_HOME=$HOME/as-api-tools
 export AWS_ELB_HOME=$HOME/elb-api-tools
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export GOPATH=$SRC/go
+export ANDROID_HOME=/Users/aleclair/Library/Android/sdk
+export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
 export EDITOR=vim
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -37,8 +39,10 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
-export PATH=$SRC/dotfiles/scripts:$PATH
+export PATH=$PERSONAL/dotfiles/scripts:$PATH
 export PATH=$HOME/.rvm/bin:$PATH
+export PATH=$HOME/Library/Python/2.7/bin:$PATH
+export PATH=/Applications/Racket/bin:$PATH
 
 # aliases
 alias resource="source ~/.zshrc"

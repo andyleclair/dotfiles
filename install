@@ -1,13 +1,23 @@
 #!/usr/bin/env zsh
 
-# First, setup personal and src directories
+# First, setup some directories I want
 mkdir -p $HOME/personal
 mkdir -p $HOME/src
+mkdir -p $HOME/.config/powerline
+
 
 # Install OSX packages
 if [[ `uname` == 'Darwin' ]]; then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
+
+# install powerline and fonts
+pip install powerline-status
+pushd $HOME/personal
+git clone git@github.com:powerline/fonts.git
+cd fonts && ./install.sh
+popd
+
 
 # install RVM because ruby <3
 curl -sSL https://get.rvm.io | bash -s stable
@@ -32,3 +42,5 @@ curl -L https://raw.github.com/jlogsdon/aam/master/aam.sh > ~/.aam.sh
 # Symlink my zshrc
 ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc
 
+# Symlink tmux config
+ln -s $HOME/personal/dotfiles/.tmux.conf ~/.tmux.conf
