@@ -8,6 +8,7 @@ mkdir -p $HOME/.config/powerline
 
 # Install OSX packages
 if [[ `uname` == 'Darwin' ]]; then
+  echo "Installing Homebrew"
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
 
@@ -20,10 +21,16 @@ popd
 
 
 # install RVM because ruby <3
-curl -sSL https://get.rvm.io | bash -s stable
+if [[ `which rvm` == '' ]]; then
+  echo "Installing RVM"
+  curl -sSL https://get.rvm.io | bash -s stable
+else
+  echo "RVM already installed"
+fi
 
 # Install Vundler to manage Vim bundles
 if [[ ! -d ~/.vim/bundle/vundle ]]; then
+  echo "Installing vundle"
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
@@ -44,3 +51,6 @@ ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc
 
 # Symlink tmux config
 ln -s $HOME/personal/dotfiles/.tmux.conf ~/.tmux.conf
+
+# Symlink gitconfig
+ln -s $HOME/personal/dotfiles/.gitconfig ~/.gitconfig
