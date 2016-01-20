@@ -156,3 +156,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_mri_exec = '/Users/aleclair/.rvm/rubies/ruby-2.1.5/bin/ruby'
+
+" Clear trailing whitespace on file save
+autocmd BufWritePre * StripWhitespace

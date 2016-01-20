@@ -12,7 +12,7 @@ if [[ `uname` == 'Darwin' ]]; then
 fi
 
 # install powerline and fonts
-pip install powerline-status
+pip install powerline-status thefuck
 pushd $HOME/personal
 git clone git@github.com:powerline/fonts.git
 cd fonts && ./install.sh
@@ -36,8 +36,8 @@ vim +PluginInstall +qall
 # Install oh-my-zsh
 curl -L http://install.ohmyz.sh | sh
 
-# Install AAM to manage AWS accounts
-curl -L https://raw.github.com/jlogsdon/aam/master/aam.sh > ~/.aam.sh
+# Install TEM to manage AWS accounts
+curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
 
 # Symlink my zshrc
 ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc

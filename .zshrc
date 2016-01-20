@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 source $PERSONAL/dotfiles/.credentials
 
 # source aam
-source ~/.aam.sh
+source ~/.em.sh
 
 # (s)exports
 export AWS_CREDENTIAL_FILE=$HOME/aws_credentials
@@ -31,6 +31,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$EC2_HOME/bin:$PATH
 export PATH=$AWS_AUTO_SCALING_HOME/bin:$PATH
 export PATH=$AWS_ELB_HOME/bin:$PATH
@@ -58,18 +59,19 @@ alias la="ls -la"
 alias csshx="nocorrect csshx"
 alias frbe="foreman run bundle exec"
 alias irb="pry" #seriously
+alias aam="em aws"
 
 # functions
 
 tcssh () {
   group=$1
- 
+
   if [ -z $group ]; then
     echo "Error: no group given."
     echo "Usage: tcssh <group>"
     return 1
   fi
- 
+
   # Make sure there isn't already a tcssh session in tmux
   if [ "" != "$(tmux list-sessions 2>1 | grep tcssh)" ]; then
     echo "Error: tcssh session already running! Please kill the session before opening a new one."
@@ -100,3 +102,4 @@ tcssh () {
 }
 
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
+eval $(thefuck --alias)
