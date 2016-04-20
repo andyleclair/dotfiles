@@ -29,9 +29,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'briancollins/vim-jst'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'sunaku/vim-ruby-minitest'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'mtth/scratch.vim'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'guns/vim-clojure-static'
@@ -39,7 +38,6 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'scrooloose/syntastic'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -146,16 +144,11 @@ let NERDTreeShowHidden=1
 " Set .hamlc to be read as .haml
 au BufRead,BufNewFile *.hamlc set ft=haml
 
-" Syntastic plugin settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_mri_exec = '/Users/aleclair/.rvm/rubies/ruby-2.1.5/bin/ruby'
-
 " Clear trailing whitespace on file save
 autocmd BufWritePre * StripWhitespace
+
+" deoplete config
+let g:deoplete#enable_at_startup = 1
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ deoplete#mappings#manual_complete()

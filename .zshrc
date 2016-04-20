@@ -1,12 +1,11 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="eastwood"
+#!/usr/bin/env zsh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
 SRC=$HOME/src
 PERSONAL=$HOME/personal
-
-plugins=(git rvm brew gem github heroku node npm osx rails lein)
-
-source $ZSH/oh-my-zsh.sh
 
 # source credentials and don't store them in git
 source $PERSONAL/dotfiles/.credentials
@@ -47,19 +46,15 @@ export PATH=/Applications/Racket/bin:$PATH
 
 # aliases
 alias resource="source ~/.zshrc"
-alias mvim="open -a MacVim"
-alias m="mvim"
-alias md="m ."
-alias sync_music="rsync -av ~/Music/iTunes/iTunes\ Media/Music/ /Volumes/LOLPRONS/Music"
+alias n="nvim"
+alias nd="n ."
 alias gpu="git push origin"
 alias gpl="git pull origin"
 alias be="bundle exec"
 alias love="/Applications/love.app/Contents/MacOS/love"
-alias la="ls -la"
-alias csshx="nocorrect csshx"
-alias frbe="foreman run bundle exec"
 alias irb="pry" #seriously
 alias aam="em aws"
+alias g="git"
 
 # functions
 
@@ -102,4 +97,3 @@ tcssh () {
 }
 
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
-eval $(thefuck --alias)

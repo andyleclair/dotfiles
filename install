@@ -12,13 +12,32 @@ if [[ `uname` == 'Darwin' ]]; then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
 
+# Install python for deps
+brew install python3
+
+# Upgrade pip
+pip3 install --upgrade pip
+
 # install powerline and fonts
-pip install powerline-status thefuck
+pip install powerline-status
 pushd $HOME/personal
 git clone git@github.com:powerline/fonts.git
 cd fonts && ./install.sh
 popd
 
+# Install neovim
+brew install neovim/neovim/neovim
+pip install neovim # python3 support
+
+# Install prezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+chsh -s /bin/zsh
 
 # install RVM because ruby <3
 if [[ `which rvm` == '' ]]; then
@@ -38,10 +57,7 @@ fi
 ln -s $HOME/personal/dotfiles/.vimrc $HOME/.vimrc
 
 # Install bundles managed by Vundler
-vim +PluginInstall +qall
-
-# Install oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
+vim +PluginInstall +UpdateRemotePlugins +qall
 
 # Install TEM to manage AWS accounts
 curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
@@ -54,3 +70,6 @@ ln -s $HOME/personal/dotfiles/.tmux.conf ~/.tmux.conf
 
 # Symlink gitconfig
 ln -s $HOME/personal/dotfiles/.gitconfig ~/.gitconfig
+
+# Install useful stuff
+brew install ag
