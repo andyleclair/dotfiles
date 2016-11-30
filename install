@@ -4,30 +4,38 @@
 mkdir -p $HOME/personal
 mkdir -p $HOME/src
 mkdir -p $HOME/.config/powerline
+touch $HOME/personal/dotfiles/.credentials
 
 
 # Install OSX packages
 if [[ `uname` == 'Darwin' ]]; then
-  echo "Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	echo "Installing Homebrew"
+	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	# Install python for deps
+	brew install python3
+	# Install neovim
+	brew install neovim/neovim/neovim
+fi
+if [[ `uname` == "Linux" ]]; then
+	sudo apt-get install python-dev python-pip python3-dev python3-pip software-properties-common
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	sudo apt-get update
+	sudo apt-get install neovim
 fi
 
-# Install python for deps
-brew install python3
 
 # Upgrade pip
 pip3 install --upgrade pip
 
 # install powerline and fonts
-pip install powerline-status
+pip3 install powerline-status
 pushd $HOME/personal
 git clone git@github.com:powerline/fonts.git
 cd fonts && ./install.sh
 popd
 
-# Install neovim
-brew install neovim/neovim/neovim
-pip install neovim # python3 support
+pip install neovim
+pip3 install neovim
 
 # Install prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -55,9 +63,11 @@ fi
 
 # Symlink my vimrc
 ln -s $HOME/personal/dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/.vim $HOME/.config/nvim
+ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 # Install bundles managed by Vundler
-vim +PluginInstall +UpdateRemotePlugins +qall
+nvim +PluginInstall +UpdateRemotePlugins +qall
 
 # Install TEM to manage AWS accounts
 curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
@@ -70,6 +80,3 @@ ln -s $HOME/personal/dotfiles/.tmux.conf ~/.tmux.conf
 
 # Symlink gitconfig
 ln -s $HOME/personal/dotfiles/.gitconfig ~/.gitconfig
-
-# Install useful stuff
-brew install ag
