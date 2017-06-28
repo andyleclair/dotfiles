@@ -4,21 +4,53 @@
 mkdir -p $HOME/personal
 mkdir -p $HOME/src
 mkdir -p $HOME/.config/powerline
+touch $HOME/personal/dotfiles/.credentials
 
 
 # Install OSX packages
 if [[ `uname` == 'Darwin' ]]; then
+<<<<<<< HEAD
   echo "Installing Homebrew"
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+=======
+	echo "Installing Homebrew"
+	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	# Install python for deps
+	brew install python3
+	# Install neovim
+	brew install neovim/neovim/neovim
+>>>>>>> b14180d416aab28806e33d061bc269b94461a356
+fi
+if [[ `uname` == "Linux" ]]; then
+	sudo apt-get install python-dev python-pip python3-dev python3-pip software-properties-common
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	sudo apt-get update
+	sudo apt-get install neovim
 fi
 
+
+# Upgrade pip
+pip3 install --upgrade pip
+
 # install powerline and fonts
-pip install powerline-status thefuck
+pip3 install powerline-status
 pushd $HOME/personal
 git clone git@github.com:powerline/fonts.git
 cd fonts && ./install.sh
 popd
 
+pip install neovim
+pip3 install neovim
+
+# Install prezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+chsh -s /bin/zsh
 
 # install RVM because ruby <3
 if [[ `which rvm` == '' ]]; then
@@ -36,12 +68,11 @@ fi
 
 # Symlink my vimrc
 ln -s $HOME/personal/dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/.vim $HOME/.config/nvim
+ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 # Install bundles managed by Vundler
-vim +PluginInstall +qall
-
-# Install oh-my-zsh
-curl -L http://install.ohmyz.sh | sh
+nvim +PluginInstall +UpdateRemotePlugins +qall
 
 # Install TEM to manage AWS accounts
 curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
