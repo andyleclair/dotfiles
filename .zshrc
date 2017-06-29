@@ -37,8 +37,8 @@ export PATH=$PERSONAL/dotfiles/scripts:$PATH
 export PATH=$HOME/.rvm/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=/Applications/Racket/bin:$PATH
-
-# aliases
+export PATH="/usr/local/opt/curl/bin:$PATH"
+ #aliases
 alias resource="source ~/.zshrc"
 alias n="nvim"
 alias nd="n ."
