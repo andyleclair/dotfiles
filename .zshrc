@@ -23,7 +23,7 @@ export GOPATH=$SRC/go
 export ANDROID_HOME=/Users/aleclair/Library/Android/sdk
 export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
 export EDITOR=nvim
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$EC2_HOME/bin:$PATH
 export PATH=$AWS_AUTO_SCALING_HOME/bin:$PATH
@@ -38,6 +38,8 @@ export PATH=$HOME/.rvm/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=/Applications/Racket/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+
  #aliases
 alias resource="source ~/.zshrc"
 alias n="nvim"
@@ -91,3 +93,6 @@ tcssh () {
 }
 
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
+
+# Activate nvm
+. "/usr/local/opt/nvm/nvm.sh"

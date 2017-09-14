@@ -75,6 +75,8 @@ set laststatus=2
 
 set shell=zsh
 
+" Enable mouse, because sometimes someone else might use my machine
+set mouse=a
 
 """"""""""""""""""""""""""""""""""""""
 " Key Bindings
@@ -142,9 +144,9 @@ au BufRead,BufNewFile *.hamlc set ft=haml
 autocmd BufWritePre * StripWhitespace
 
 " deoplete config
-let g:deoplete#enable_at_startup = 1
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ deoplete#mappings#manual_complete()
+"let g:deoplete#enable_at_startup = 1
+"inoremap <silent><expr> <Tab>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ deoplete#mappings#manual_complete()
 
 set clipboard=unnamedplus

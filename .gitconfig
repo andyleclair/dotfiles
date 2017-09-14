@@ -1,6 +1,6 @@
 [user]
   name = Andy LeClair
-  email = andy.leclair@tapjoy.com
+  email = andyleclair@gmail.com
 [github]
   user = andyleclair
   username = andyleclair
@@ -33,4 +33,4 @@
   untracked = cyan
 
 [core]
-  editor = /usr/local/bin/vim
+  editor = /usr/local/bin/nvim
