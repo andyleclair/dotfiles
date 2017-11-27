@@ -9,37 +9,34 @@ filetype off
 
 
 """""""""""""""""""""""""""""""""""""
-" Vundle
+" vim-plug
 """""""""""""""""""""""""""""""""""""
 
-" Setup Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+" Setup vim-plug
+call plug#begin('~/.local/share/nvim/plugged')
 
-" Let Vundle manage Vundle
-Plugin 'gmarik/vundle'
-
-" Plugin these plugins
-Plugin 'tsaleh/vim-align'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'Shougo/deoplete.nvim'
-Plugin 'sunaku/vim-ruby-minitest'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'bling/vim-airline'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'sheerun/vim-polyglot'
+" Plug these plugins
+Plug 'tsaleh/vim-align'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+Plug 'thoughtbot/vim-rspec'
+Plug 'scrooloose/nerdtree'
+"Plug 'Shougo/deoplete.nvim'
+Plug 'sunaku/vim-ruby-minitest'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'bling/vim-airline'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'sheerun/vim-polyglot'
+Plug 'ctrlpvim/ctrlp.vim'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
 """"""""""""""""""""""""""""""""""""""
 
 " Install Solarized (the last color scheme you'll ever need)
-Plugin 'altercation/vim-colors-solarized'
-call vundle#end()
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
 
 filetype plugin indent on
 
@@ -78,6 +75,10 @@ set shell=zsh
 " Enable mouse, because sometimes someone else might use my machine
 set mouse=a
 
+" Set per-filetype preferences
+autocmd FileType javascript setlocal ts=4 sw=4 sts=4
+
+
 """"""""""""""""""""""""""""""""""""""
 " Key Bindings
 """"""""""""""""""""""""""""""""""""""
@@ -89,7 +90,7 @@ let mapleader="\\"
 
 " File navigation with ease
 
-" Ctrl-p mapped to <leader>f
+" Map ctrlp to \f
 map <leader>f :CtrlPMixed<cr>
 
 " Edit in current directory

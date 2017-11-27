@@ -7,11 +7,11 @@ fi
 SRC=$HOME/src
 PERSONAL=$HOME/personal
 
+# Load TEM
+source ~/.em.sh
+
 # source credentials and don't store them in git
 source $PERSONAL/dotfiles/.credentials
-
-# source aam
-source ~/.em.sh
 
 # (s)exports
 export AWS_CREDENTIAL_FILE=$HOME/aws_credentials
@@ -23,6 +23,7 @@ export GOPATH=$SRC/go
 export ANDROID_HOME=/Users/aleclair/Library/Android/sdk
 export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
 export EDITOR=nvim
+export ERL_AFLAGS="-kernel shell_history enabled"
 export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$EC2_HOME/bin:$PATH
@@ -49,16 +50,17 @@ alias gpl="git pull origin"
 alias be="bundle exec"
 alias love="/Applications/love.app/Contents/MacOS/love"
 alias irb="pry" #seriously
-alias aam="em aws"
 alias g="git"
+alias aam="em aws"
 
 # functions
 
 tcssh () {
-  group=$1
+  facet=$1
 
-  if [ -z $group ]; then
-    echo "Error: no group given."
+
+  if [ -z $facet ]; then
+    echo "Error: no facet given."
     echo "Usage: tcssh <group>"
     return 1
   fi
@@ -69,7 +71,7 @@ tcssh () {
     return 1
   fi
 
-  instances=`ec2-describe-instances --filter "group-name=$1" | grep "INSTANCE" | awk '{print $4}'`
+  instances=$(aws ec2 describe-instances --region us-west-2 --output json --filters "Name=tag:Application,Values=api" "Name=instance-state-name,Values=running" --query "Reservations[*].Instances[*].[PublicIpAddress]" | jq ".[] | .[] | .[]" | tr -d '"')
 
   if [ -z $instances ]
   then
@@ -96,3 +98,5 @@ precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
 
 # Activate nvm
 . "/usr/local/opt/nvm/nvm.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
