@@ -32,6 +32,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'mhinz/vim-mix-format'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -45,6 +46,7 @@ filetype plugin indent on
 
 syntax enable
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " Disable the GUI menu bar (if running)
@@ -150,3 +152,5 @@ autocmd BufWritePre * StripWhitespace
 "      \ deoplete#mappings#manual_complete()
 
 set clipboard=unnamedplus
+
+let g:mix_format_on_save=1

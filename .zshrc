@@ -94,5 +94,8 @@ tcssh () {
 
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
 
-# Activate nvm
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+source $HOME/.em.sh
+em init # Loads default Profiles for each Platform found
