@@ -101,7 +101,7 @@ test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 source $HOME/.em.sh
 em init # Loads default Profiles for each Platform found
-=======
+
 # Activate nvm
 . "/usr/local/opt/nvm/nvm.sh"
 
