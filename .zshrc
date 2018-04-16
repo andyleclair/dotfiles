@@ -106,3 +106,4 @@ em init # Loads default Profiles for each Platform found
 . "/usr/local/opt/nvm/nvm.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOME/.cargo/env
