@@ -25,7 +25,7 @@ export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
 export EDITOR=nvim
 export ERL_AFLAGS="-kernel shell_history enabled"
 export NVM_DIR="$HOME/.nvm"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$EC2_HOME/bin:$PATH
 export PATH=$AWS_AUTO_SCALING_HOME/bin:$PATH
 export PATH=$AWS_ELB_HOME/bin:$PATH
@@ -35,8 +35,8 @@ export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$PERSONAL/dotfiles/scripts:$PATH
-export PATH=$HOME/.rvm/bin:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=/Applications/Racket/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
@@ -101,9 +101,6 @@ test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 source $HOME/.em.sh
 em init # Loads default Profiles for each Platform found
-
-# Activate nvm
-. "/usr/local/opt/nvm/nvm.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $HOME/.cargo/env
