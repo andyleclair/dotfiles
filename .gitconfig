@@ -33,4 +33,4 @@
   untracked = cyan
 
 [core]
-  editor = /usr/local/bin/nvim
+  editor = /usr/bin/nvim

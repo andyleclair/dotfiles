@@ -27,7 +27,7 @@ Plug 'bling/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mhinz/vim-mix-format'
+Plug 'ntenczar/vim-mix-fformat'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -75,10 +75,6 @@ set shell=zsh
 
 " Enable mouse, because sometimes someone else might use my machine
 set mouse=a
-
-" Set per-filetype preferences
-autocmd FileType javascript setlocal ts=4 sw=4 sts=4
-
 
 """"""""""""""""""""""""""""""""""""""
 " Key Bindings

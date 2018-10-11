@@ -22,7 +22,6 @@ export AWS_ELB_HOME=$HOME/elb-api-tools
 export GOPATH=$SRC/go
 export ANDROID_HOME=/Users/aleclair/Library/Android/sdk
 export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
-export EDITOR=nvim
 export ERL_AFLAGS="-kernel shell_history enabled"
 export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -40,6 +39,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=/Applications/Racket/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export EDITOR=nvim
 
  #aliases
 alias resource="source ~/.zshrc"
@@ -104,3 +104,6 @@ em init # Loads default Profiles for each Platform found
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $HOME/.cargo/env
+
+# added by travis gem
+[ -f /home/axe/.travis/travis.sh ] && source /home/axe/.travis/travis.sh

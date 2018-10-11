@@ -72,6 +72,9 @@ nvim +PlugInstall +qall
 # Install TEM to manage AWS accounts
 curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
 
+# Install TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Symlink my zshrc
 ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc
 

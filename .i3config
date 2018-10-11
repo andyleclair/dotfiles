@@ -170,3 +170,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bar {
         status_command i3status
 }
+
+# Start lock screensaver
+bindsym --release $mod+Ctrl+Shift+l exec xscreensaver-command -lock
+
+exec xscreensaver
+exec dropbox start
+exec "feh --bg-scale ~/Downloads/Appcues\ Wallpapers/AppcuesDesktop3.png"
