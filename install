@@ -63,7 +63,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Symlink my vimrc
 rm $HOME/.vimrc
 ln -s $HOME/personal/dotfiles/.vimrc $HOME/.vimrc
-ln -s $HOME/.vim $HOME/.config/nvim
+mkdir $HOME/.config/nvim
 ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 
 # Install bundles managed by Vundler
