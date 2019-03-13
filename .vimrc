@@ -34,16 +34,20 @@ Plug 'ntenczar/vim-mix-fformat'
 """"""""""""""""""""""""""""""""""""""
 
 " Install Solarized (the last color scheme you'll ever need)
-Plug 'altercation/vim-colors-solarized'
+Plug 'iCyMind/NeoSolarized'
 
 call plug#end()
 
 filetype plugin indent on
 
 syntax enable
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme NeoSolarized
 
 " Disable the GUI menu bar (if running)
 if has("gui_running")

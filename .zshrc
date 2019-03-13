@@ -36,6 +36,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$PERSONAL/dotfiles/scripts:$PATH
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export PATH=/Applications/Racket/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
@@ -97,7 +98,6 @@ tcssh () {
 precmd () { print -Pn "\e]2;%n@%M | %~\a" } # title bar prompt
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 source $HOME/.em.sh
 em init # Loads default Profiles for each Platform found
@@ -107,3 +107,7 @@ source $HOME/.cargo/env
 
 # added by travis gem
 [ -f /home/axe/.travis/travis.sh ] && source /home/axe/.travis/travis.sh
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
