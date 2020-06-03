@@ -28,7 +28,7 @@ class Aws
     :short => "-r",
     :long =>  "--region REGION",
     :description => "AWS region",
-    :default => 'us-east-1'
+    :default => 'us-west-2'
 
   option :user,
     :short => "-u",
