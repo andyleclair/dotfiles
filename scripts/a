@@ -28,7 +28,7 @@ class Aws
     :short => "-r",
     :long =>  "--region REGION",
     :description => "AWS region",
-    :default => 'us-east-1'
+    :default => 'us-west-2'
 
   option :user,
     :short => "-u",
@@ -230,20 +230,20 @@ class Aws
     if print_output
       puts "\nFound (#{instances.size}) instances:"
       instances.each do |instance|
-        puts "#{instance["PublicDnsName"]} - #{instance["InstanceId"]}"
+        puts "#{instance["PrivateIpAddress"]} - #{instance["InstanceId"]}"
       end
       if instances.any?
         puts "\n\nSingle line output for cssh into #{instances.size} hosts:"
-        puts instances.map{|instance| "#{instance["PublicDnsName"]}"}.join
+        puts instances.map{|instance| "#{instance["PrivateIpAddress"]}"}.join
 
         first = instances.first
-        IO.popen("pbcopy", "r+" ){|p| p.print first["PublicDnsName"] }
-        puts "\n\nPasted the first hostname '#{first["PublicDnsName"]}' - (#{first["InstanceId"]}) into the clipboard.\n\n"
+        IO.popen("pbcopy", "r+" ){|p| p.print first["PrivateIpAddress"] }
+        puts "\n\nPasted the first hostname '#{first["PrivateIpAddress"]}' - (#{first["InstanceId"]}) into the clipboard.\n\n"
 
       end
     end
 
-    instances.map{|instance| "#{instance["PublicDnsName"]}"}
+    instances.map{|instance| "#{instance["PrivateIpAddress"]}"}
   end
 
   def ssh_key

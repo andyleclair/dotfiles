@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+VSN=$1
+git commit -am "$VSN"
+git tag $VSN
+git push origin master
+git push origin --tags

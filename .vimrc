@@ -28,6 +28,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-mix-format'
+Plug 'elixir-editors/vim-elixir'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -39,6 +40,7 @@ Plug 'iCyMind/NeoSolarized'
 call plug#end()
 
 filetype plugin indent on
+au BufRead,BufNewFile *.html.leex set filetype=eex
 
 syntax enable
 if exists('+termguicolors')
@@ -153,5 +155,4 @@ autocmd BufWritePre * StripWhitespace
 
 set clipboard+=unnamed
 
-let g:mix_format_on_save=1
 let g:mix_format_silent_errors = 1

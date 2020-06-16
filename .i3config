@@ -154,6 +154,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym --release Ctrl+Shift+4 exec "scrot -s -e 'mv $f ~/screenshots/'"
+bindsym --release Ctrl+Shift+5 exec "scrot -s -e 'mv $f ~/screenshots/ && xclip -selection clipboard -t image/png ~/screenshots/$f'"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
@@ -177,3 +178,4 @@ bindsym --release $mod+Ctrl+Shift+l exec xscreensaver-command -lock
 exec xscreensaver
 exec dropbox start
 exec "feh --bg-scale ~/Downloads/Appcues\ Wallpapers/AppcuesDesktop3.png"
+exec "setxkbmap -option compose:rwin"
