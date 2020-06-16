@@ -109,5 +109,3 @@ source $HOME/.cargo/env
 [ -f /home/axe/.travis/travis.sh ] && source /home/axe/.travis/travis.sh
 
 . $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash

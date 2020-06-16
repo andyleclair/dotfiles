@@ -27,7 +27,7 @@ Plug 'bling/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ntenczar/vim-mix-fformat'
+Plug 'mhinz/vim-mix-format'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme

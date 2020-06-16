@@ -99,6 +99,7 @@ class Aws
     raise "Empty hostname" unless hostname
     command = "ssh #{ssh_key} #{hostname}"
     debug "sshing with command #{command}"
+    debug "ssh #{ssh_key} #{config[:user]}@#{hostname}"
     exec "ssh #{ssh_key} #{config[:user]}@#{hostname}"
   end
 
