@@ -30,6 +30,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-startify'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
