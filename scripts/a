@@ -55,7 +55,6 @@ class Aws
     "scp"  => "scp_files",
     "find" => "find_instances",
     "as"   => "find_autoscaler_group_member",
-    "tiab" => "ssh_to_tiab",
     "cssh" => "ssh_to_cluster"
   }
 
@@ -99,15 +98,8 @@ class Aws
     raise "Empty hostname" unless hostname
     command = "ssh #{ssh_key} #{hostname}"
     debug "sshing with command #{command}"
-    debug "ssh #{ssh_key} #{config[:user]}@#{hostname}"
     exec "ssh #{ssh_key} #{config[:user]}@#{hostname}"
   end
-
-  def ssh_to_tiab
-    config[:region] = "us-west-2"
-    ssh_somewhere
-  end
-
 
   def find_autoscaler_group_member(name = @argv[0], selector = @argv[1])
     if name.nil? || name.empty?
