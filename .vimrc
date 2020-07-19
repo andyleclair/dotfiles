@@ -20,6 +20,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'thoughtbot/vim-rspec'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'Shougo/deoplete.nvim'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'kien/rainbow_parentheses.vim'
@@ -36,7 +37,8 @@ Plug 'elixir-editors/vim-elixir'
 
 " Install Solarized (the last color scheme you'll ever need)
 Plug 'iCyMind/NeoSolarized'
-
+" Very important, needs to be last
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on

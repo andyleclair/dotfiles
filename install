@@ -75,6 +75,12 @@ curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
 # Install TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git ~/personal/nerd-fonts
+pushd ~/personal/nerd-fonts
+./install.sh
+popd
+
 # Symlink my zshrc
 ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc
 
@@ -83,3 +89,5 @@ ln -s $HOME/personal/dotfiles/.tmux.conf ~/.tmux.conf
 
 # Symlink gitconfig
 ln -s $HOME/personal/dotfiles/.gitconfig ~/.gitconfig
+
+echo "Installed! Now set your font to Hack Regular to get glyphs"
