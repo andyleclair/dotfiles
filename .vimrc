@@ -31,6 +31,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-startify'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme

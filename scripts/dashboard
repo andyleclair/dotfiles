@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+if [ -z "$1" ]
+then
+  echo "You must provide an EC2 Instance ID"
+  exit 1
+fi
+
+IP_ADDR=$(aws ec2 describe-instances --instance-ids "$1" --region us-west-2 | jq '.[][]["Instances"][]["PrivateIpAddress"]');
+
+bash --login -c "ssh -L 8888:localhost:8888 $IP_ADDR"
