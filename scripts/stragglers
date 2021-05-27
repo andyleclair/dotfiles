@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Finding stragglers..."
+mix edeliver version production | grep -C 5 "$1" | grep host | awk -F':' '{gsub(/^[ \t]+/, "", $2); print $2}' | tr '\n' ','

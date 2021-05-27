@@ -24,6 +24,7 @@ export ANDROID_HOME=/Users/aleclair/Library/Android/sdk
 export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
 export ERL_AFLAGS="-kernel shell_history enabled"
 export NVM_DIR="$HOME/.nvm"
+export PATH=$HOME/src/opscues/:$PATH
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$EC2_HOME/bin:$PATH
 export PATH=$AWS_AUTO_SCALING_HOME/bin:$PATH
@@ -57,22 +58,13 @@ alias aam="em aws"
 # functions
 
 tcssh () {
-  facet=$1
-
-
-  if [ -z $facet ]; then
-    echo "Error: no facet given."
-    echo "Usage: tcssh <group>"
-    return 1
-  fi
-
   # Make sure there isn't already a tcssh session in tmux
   if [ "" != "$(tmux list-sessions 2>1 | grep tcssh)" ]; then
     echo "Error: tcssh session already running! Please kill the session before opening a new one."
     return 1
   fi
 
-  instances=$(aws ec2 describe-instances --region us-west-2 --output json --filters "Name=tag:Application,Values=api" "Name=instance-state-name,Values=running" --query "Reservations[*].Instances[*].[PublicIpAddress]" | jq ".[] | .[] | .[]" | tr -d '"')
+  instances=$(cat instances.txt)
 
   if [ -z $instances ]
   then
@@ -82,7 +74,7 @@ tcssh () {
 
   let i=0
   for instance in ${(f)instances}; do
-    cmd="ssh `whoami`@$instance"
+    cmd="ssh deploy@$instance"
     if [ $i -eq 0 ]; then
       tmux new-session -s tcssh -n tcssh -d "$cmd"
     else
@@ -109,3 +101,5 @@ source $HOME/.cargo/env
 [ -f /home/axe/.travis/travis.sh ] && source /home/axe/.travis/travis.sh
 
 . $HOME/.asdf/asdf.sh
+
+aam use prod

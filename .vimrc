@@ -7,6 +7,8 @@ set nocompatible
 
 filetype off
 
+" Needs to be before ALE is loaded
+let g:ale_completion_enabled = 1
 
 """""""""""""""""""""""""""""""""""""
 " vim-plug
@@ -32,6 +34,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-startify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'dense-analysis/ale'
 
 """"""""""""""""""""""""""""""""""""""
 " Color Scheme
@@ -39,12 +42,12 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Install Solarized (the last color scheme you'll ever need)
 Plug 'iCyMind/NeoSolarized'
+Plug 'cocopon/iceberg.vim'
 " Very important, needs to be last
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on
-au BufRead,BufNewFile *.html.leex set filetype=eex
 
 syntax enable
 if exists('+termguicolors')
@@ -52,8 +55,8 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-set background=dark
-colorscheme NeoSolarized
+"set background=dark
+colorscheme iceberg
 
 " Disable the GUI menu bar (if running)
 if has("gui_running")
@@ -72,6 +75,7 @@ set smarttab
 set smartindent
 
 " Line Nunbers
+"
 set number
 
 " Incremental search, highlight searches
@@ -85,6 +89,30 @@ set shell=zsh
 
 " Enable mouse, because sometimes someone else might use my machine
 set mouse=a
+
+"""
+" ALE Settings
+"""
+
+let g:ale_linters = {}
+let g:ale_linters.elixir = ['elixir-ls']
+
+" Required, tell ALE where to find Elixir LS
+let g:ale_elixir_elixir_ls_release = expand("~/elixir-ls/rel")
+
+" Optional, you can disable Dialyzer with this setting
+let g:ale_elixir_elixir_ls_config = {'elixirLS': {'dialyzerEnabled': v:false}}
+
+" Optional, configure as-you-type completions
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:airline#extensions#ale#enabled = 1
+
+" Format my cod3
+let g:ale_fixers = {}
+let g:ale_fixers.elixir = [ 'mix_format' ]
+
+autocmd FileType elixir,eelixir nnoremap <Leader>af :ALEFix<CR>
+
 
 """"""""""""""""""""""""""""""""""""""
 " Key Bindings
