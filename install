@@ -1,4 +1,5 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+# shebang'd to bash because zsh ain't come standard
 
 # First, setup some directories I want
 mkdir -p $HOME/personal
