@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 
+rm -rf ~/.asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
 
 # Also symlink in my zshrc which has the asdf juice already
+rm -rf $HOME/.zshrc
 ln -s $HOME/personal/dotfiles/.zshrc ~/.zshrc
