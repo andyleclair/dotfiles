@@ -9,7 +9,7 @@ mkdir -p $HOME/src
 mkdir -p $HOME/.config/powerline
 touch $HOME/personal/dotfiles/.credentials
 
-if [[$(uname) == "Darwin"]]; then
+if [[ `uname` == Darwin* ]]; then
   echo "Installing is unsupported on this architecture"
   exit 1
 fi
