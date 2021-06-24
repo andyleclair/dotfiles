@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # shebang'd to bash because zsh ain't come standard
 
+set -e
+
 # First, setup some directories I want
 mkdir -p $HOME/personal
 mkdir -p $HOME/src
 mkdir -p $HOME/.config/powerline
 touch $HOME/personal/dotfiles/.credentials
 
-if [[`uname` == "Darwin"]]; then
+if [[$(uname) == "Darwin"]]; then
   echo "Installing is unsupported on this architecture"
   exit 1
 fi
