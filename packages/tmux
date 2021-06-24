@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Install TPM
+rm -rf $HOME/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+# Symlink tmux config
+rm -f $HOME/.tmux.conf
+ln -s $HOME/personal/dotfiles/.tmux.conf $HOME/.tmux.conf
+

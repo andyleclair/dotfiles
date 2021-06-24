@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+# Install TEM to manage AWS accounts
+rm -f $HOME/.em.sh
+curl -L https://raw.github.com/tapjoy/tem/master/em.sh > $HOME/.em.sh

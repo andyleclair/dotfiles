@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+# Symlink gitconfig
+rm -f $HOME/.gitconfig
+ln -s $HOME/personal/dotfiles/.gitconfig ~/.gitconfig

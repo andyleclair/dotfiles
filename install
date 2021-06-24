@@ -31,19 +31,16 @@ zsh -l ./packages/pip_things
 # Install neovim + plugins
 zsh -l ./packages/neovim
 
-# Install TEM to manage AWS accounts
-curl -L https://raw.github.com/tapjoy/tem/master/em.sh > ~/.em.sh
-
-# Install TPM
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Install patched fonts for glyphs
 zsh -l ./packages/fonts
 
-# Symlink tmux config
-ln -s $HOME/personal/dotfiles/.tmux.conf ~/.tmux.conf
+# Install TEM
+zsh -l ./packages/tem
 
-# Symlink gitconfig
-ln -s $HOME/personal/dotfiles/.gitconfig ~/.gitconfig
+# Install tmux
+zsh -l ./packages/tmux
+
+# Configure git
+zsh -l ./packages/gitconfig
 
 echo "Installed! Now set your font to Hack Regular to get glyphs"
