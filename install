@@ -13,7 +13,7 @@ if [[`uname` == "Darwin"]]; then
 fi
 
 # Install base dependencies for everything
-zsh -l ./packages/base
+bash -l ./packages/base
 
 # Next, install ASDF to manage, like, so many packages
 zsh -l ./packages/asdf
