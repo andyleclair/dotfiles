@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+asdf plugin-add erlang
+asdf plugin-add elixir
+asdf plugin-add ruby
+asdf plugin-add nodejs
+asdf plugin-add rust
+
+asdf install erlang 24.0.2
+asdf install elixir 1.12.1-otp-24
+asdf install ruby 2.7.3
+asdf install nodejs 12.22.1
+asdf install rust stable
+
+asdf global erlang 24.0.2
+asdf global elixir 1.12.1-otp-24
+asdf global ruby 2.7.3
+asdf global nodejs 12.22.1
+asdf global rust stable

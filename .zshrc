@@ -20,25 +20,18 @@ export AWS_AUTO_SCALING_HOME=$HOME/as-api-tools
 export AWS_ELB_HOME=$HOME/elb-api-tools
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export GOPATH=$SRC/go
-export ANDROID_HOME=/Users/aleclair/Library/Android/sdk
-export ANDROID_NDK=/Users/aleclair/Downloads/android-ndk-r10d
 export ERL_AFLAGS="-kernel shell_history enabled"
-export NVM_DIR="$HOME/.nvm"
 export PATH=$HOME/src/opscues/:$PATH
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$EC2_HOME/bin:$PATH
 export PATH=$AWS_AUTO_SCALING_HOME/bin:$PATH
 export PATH=$AWS_ELB_HOME/bin:$PATH
-export PATH=/usr/local/Cellar/rabbitmq/3.0.0/sbin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/local/opt/go/libexec/bin:$PATH
 export PATH=/usr/local/heroku/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=$PERSONAL/dotfiles/scripts:$PATH
-export PATH=$HOME/Library/Python/2.7/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
-export PATH=/Applications/Racket/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 export EDITOR=nvim
@@ -50,8 +43,6 @@ alias nd="n ."
 alias gpu="git push origin"
 alias gpl="git pull origin"
 alias be="bundle exec"
-alias love="/Applications/love.app/Contents/MacOS/love"
-alias irb="pry" #seriously
 alias g="git"
 alias aam="em aws"
 
@@ -96,9 +87,6 @@ em init # Loads default Profiles for each Platform found
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $HOME/.cargo/env
-
-# added by travis gem
-[ -f /home/axe/.travis/travis.sh ] && source /home/axe/.travis/travis.sh
 
 . $HOME/.asdf/asdf.sh
 

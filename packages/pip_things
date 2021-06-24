@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+# Upgrade pip
+pip3 install --upgrade pip
+
+# install powerline and fonts
+pip3 install powerline-status
+pushd $HOME/personal
+git clone git@github.com:powerline/fonts.git
+cd fonts && ./install.sh
+popd
+
+pip install neovim
+pip3 install neovim

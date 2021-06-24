@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git ~/personal/nerd-fonts
+pushd ~/personal/nerd-fonts
+./install.sh
+popd
+
