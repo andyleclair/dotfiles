@@ -20,6 +20,9 @@ zsh -l ./packages/zsh
 
 # Next, install ASDF to manage, like, so many packages
 zsh -l ./packages/asdf
+
+. $HOME/.asdf/asdf.sh
+
 zsh -l ./packages/asdf_langs
 
 # Now do pip stuff because everyone loves python
