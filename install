@@ -16,6 +16,7 @@ fi
 
 # Install base dependencies for everything
 bash -l ./packages/base
+zsh -l ./packages/zsh
 
 # Next, install ASDF to manage, like, so many packages
 zsh -l ./packages/asdf
