@@ -2,7 +2,7 @@
 
 sudo apt-get install libx11-dev libxft-dev fontconfig
 
-git clone git@github.com:sugud0r/st-config.git $HOME/personal/st-config
+git clone git@github.com:andyleclair/st-config.git $HOME/personal/st-config
 pushd $HOME/personal/st-config
 make
 sudo make install

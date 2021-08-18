@@ -32,6 +32,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'mhinz/vim-mix-format'
 Plug 'mhinz/vim-startify'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ziglang/zig.vim'
 "Plug 'dense-analysis/ale'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
