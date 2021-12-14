@@ -34,6 +34,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export PATH=$HOME/.asdf/installs/rust/stable/bin:$PATH
 export EDITOR=nvim
 
  #aliases
@@ -45,6 +46,7 @@ alias gpl="git pull origin"
 alias be="bundle exec"
 alias g="git"
 alias aam="em aws"
+alias ag="rg"
 
 # functions
 
